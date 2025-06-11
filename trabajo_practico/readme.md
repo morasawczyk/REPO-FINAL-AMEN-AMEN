@@ -15,7 +15,7 @@ Los alumnos adquirirán las siguientes habilidades:
 * Autonomía en la lectura del material dispuesto por los docentes.
 * Autoevaluación de todo el material desarrollado.
 * Presentación de avances.
-* **Los resultados optenidos no deben diferir en más de ±0.5 s de los arrojados por algún software comercial.**
+* **Los resultados obtenidos no deben diferir en más de ±0.5 s de los arrojados por algún software comercial (y/o de los establecidos en la RI sintetizada).**
 * Documentar (en [LaTeX](https://www.latex-project.org/)) el procedimiento de medición y diseño de scripts.
 
 ## Consigna
@@ -85,7 +85,7 @@ Realizar un trabajo práctico que cumpla con las tres etapas de entrega resumida
                 <li>Graficar en escala logarítmica la señales de interés.</li>
                 <li>Probar con las respuestas al impulso sintetizadas y las muestras descargadas. En caso de utilizar más de una toma por recinto, calcular el valor medio y la desviación estándar.</li>
                 <li>Graficar los resultados.</li>
-                <li>Establecer la integración de todas las funciones usando un archivo de programa “main”.</li>
+                <li>Establecer la integración de todas las funciones usando un archivo de programa "main".</li>
                 <li>Compara los resultados con software específico para el análisis de señales o plugins del mercado.</li>
             </ul>
         </td>	
@@ -142,7 +142,7 @@ Respetar las siguientes pautas:
 ## Informe final (obligatorio)
 Respetar las siguientes pautas:
 
-* Realizar un informe final, con el mismo formato establecido en el informe preliminar (atendiendo a las observaciones marcadas en la entrega del informe preliminar), pero en este caso no debe exceder las 5 página. 
+* Realizar un informe final, con el mismo formato establecido en el informe preliminar (atendiendo a las observaciones marcadas en la entrega del informe preliminar), pero en este caso no debe exceder las 5 páginas. 
 * Remitir solamente a detalles relevantes.
 * En el informe debe figurar claramente cómo se unen todas las funciones definidas y la interacción entre ellas. Utilizar algún diagrama para visualizar dicha relación.
 * Mencionar detalladamente el procedimiento.
@@ -152,7 +152,6 @@ Respetar las siguientes pautas:
 
 > A modo de ejemplo dejamos dos informes modelos: [Dylan Kaplan - Franco Rebora - Santiago Salinas](https://drive.google.com/file/d/1Xum3AZLTr6sm2q462rsJaoRpM00sgSNk/view?usp=share_link) y [Castelli Corina - Espindola Agustin - Lareo Matıas Federico - Passano Nahuel](https://drive.google.com/file/d/1HSazrH4OWhI8_3VEaoks2ZMtf0E63aEA/view?usp=share_link)
 
-
 ## Distribución de contenidos del informe 
 A modo ilustrativo se muestra los porcentajes del contenido en los informes:
 
@@ -160,22 +159,78 @@ A modo ilustrativo se muestra los porcentajes del contenido en los informes:
 | -- | -- | -- | -- | -- | --  |
 | 5% | 10% | 10% | 25% | 30% | 20% |
 
-## Presentación oral
-Los resultados alcanzados deben ser presentados de manera oral, a continuación algunas pautas para ayudarlos a prepararla:
+## Presentación oral final
+Los resultados alcanzados deben ser presentados de manera oral al finalizar el proyecto. Esta presentación constituye una instancia fundamental de evaluación que permite demostrar tanto las competencias técnicas desarrolladas como la capacidad de comunicación profesional.
 
-1. **Estructura clara y coherente**: Organiza tu presentación de manera lógica y estructurada. Introduce el tema y los objetivos del proyecto, presenta los pasos seguidos en el desarrollo del software y explica los resultados obtenidos. Utiliza transiciones claras.
+### **Modalidad y duración**
+- **Duración:** 20 minutos de presentación + 5 minutos de preguntas.
+- **Audiencia:** Toda la clase (estudiantes y docentes).
+- **Formato:** Presencial con apoyo de material visual (.ppt/.pdf).
 
-2. **Contextualiza el problema**: Explica la importancia y relevancia de los parámetros acústicos en el campo en el que se aplica el software. Destaca los desafíos o problemas que se enfrentan al calcular estos parámetros y cómo tu software resuelve o mejora esos aspectos.
+### **Estructura recomendada**
 
-3. **Demuestra el proceso de desarrollo**: Explica los pasos que seguiste durante el desarrollo del software. Describe las metodologías utilizadas, los algoritmos implementados y cualquier otro aspecto técnico relevante. Utiliza gráficos, diagramas o ejemplos para ilustrar cómo funciona el software.
+#### **1. Introducción (3 minutos)**
+- Contexto del proyecto y objetivos alcanzados.
+- Presentación del equipo y distribución de responsabilidades.
+- Overview de la arquitectura del software desarrollado.
 
-4. **Destaca los resultados y beneficios**: Presenta los resultados obtenidos a través del uso del software. Muestra cómo se comparan con los resultados obtenidos por otros métodos o herramientas existentes. Resalta los beneficios y ventajas que ofrece tu software en términos de precisión, eficiencia o cualquier otro aspecto relevante.
+#### **2. Desarrollo técnico (8 minutos)**
+- **Demostración práctica:** Mostrar 2-3 funciones clave funcionando en vivo.
+- **Decisiones de diseño:** Justificar enfoques técnicos adoptados.
+- **Integración del sistema:** Explicar cómo se conectan los módulos desarrollados.
 
-5. **Conclusión y perspectivas futuras**: Cierra tu presentación resumiendo los principales puntos y conclusiones del trabajo práctico. Discute posibles mejoras o ampliaciones que podrían implementarse en el futuro. 
+#### **3. Resultados y validación (6 minutos)**
+- **Comparación con software comercial:** Mostrar diferencias, similitudes y precisión.
+- **Análisis de rendimiento:** Discutir rangos de error y confiabilidad.
+- **Casos de prueba:** Presentar resultados con datasets reales.
 
-Recorda practicar tu presentación varias veces para asegurarte de que fluya de manera suave y que puedas transmitir claramente los aspectos clave de tu trabajo práctico.
+#### **4. Reflexiones y aprendizajes (3 minutos)**
+- **Principales dificultades** encontradas y cómo se resolvieron.
+- **Aspectos más desafiantes** del proyecto.
+- **Aprendizajes técnicos y metodológicos** más significativos.
 
-> El tiempo dispuesto para cada equipo es de 15 minútos.
+### **Requisitos obligatorios de contenido**
+
+#### **Material visual requerido**
+✅ **Gráficos de resultados (por ejemplo):**
+- Respuesta al impulso sintetizada vs. real.
+- Curvas de decaimiento en escala logarítmica.
+- Comparación espectral (antes/después del filtrado).
+- Validación con software de referencia.
+
+✅ **Demostración en vivo del software:**
+- Carga de archivos de audio.
+- Procesamiento completo de una señal.
+- Generación de resultados finales.
+
+✅ **Tabla comparativa:** Resultados propios vs. valores de referencia (mínimo RTtotal / RToctava).
+
+### **Criterios de evaluación**
+
+| Aspecto | Peso | Descripción |
+|---------|------|-------------|
+| **Aspectos técnicos** | 40% | Profundidad de comprensión, calidad de implementación, validez de resultados, capacidad de demostración |
+| **Comunicación** | 35% | Claridad explicativa, uso efectivo del material visual, gestión del tiempo, respuesta a preguntas |
+| **Análisis crítico** | 25% | Reflexión sobre limitaciones, comparación objetiva, identificación de mejoras, aprendizajes |
+
+### **Recomendaciones específicas**
+
+#### **Para el éxito de la demostración:**
+1. **Ensayar múltiples veces** la demo técnica para evitar errores en vivo.
+2. **Preparar archivos de respaldo** en caso de problemas técnicos.
+3. **Tener resultados pre-calculados** como backup si el software falla.
+4. **Designar roles claros** entre integrantes durante la presentación.
+
+#### **Para una comunicación efectiva:**
+1. **Usar terminología técnica precisa** pero explicar conceptos complejos.
+2. **Conectar resultados con teoría** vista en clase.
+3. **Ser honestos sobre limitaciones** - es parte del aprendizaje profesional.
+4. **Mostrar entusiasmo** por el trabajo realizado y los aprendizajes obtenidos.
+
+### **Pregunta de reflexión obligatoria**
+Cada grupo debe prepararse para responder: *"¿Qué fue lo más valioso que aprendieron desarrollando este proyecto y cómo lo aplicarían en su carrera profesional?"*
+
+> **Esta presentación representa la culminación del trabajo más importante de la asignatura. Es una oportunidad para demostrar no solo las habilidades técnicas desarrolladas, sino también la capacidad de comunicar conocimiento especializado y reflexionar críticamente sobre el propio proceso de aprendizaje.**
 
 ## + Info
 * [Documentación oficial de overleaf](https://www.overleaf.com/learn)
