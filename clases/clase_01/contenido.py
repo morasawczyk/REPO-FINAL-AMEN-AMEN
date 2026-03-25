@@ -1,12 +1,13 @@
 import marimo
 
-__generated_with = "0.13.0"
+__generated_with = "0.21.1"
 app = marimo.App(width="medium")
 
 
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 
@@ -70,7 +71,7 @@ def _():
     print(f"Canal: {nombre_canal}")
     print(f"Amplitud: {amplitud}")
     print(f"Estereo: {es_estereo}")
-    return amplitud, es_estereo, nombre_canal, sample_rate
+    return
 
 
 @app.cell
@@ -96,7 +97,7 @@ def _():
     print(f"duracion = {duracion} -> tipo: {type(duracion).__name__}")
     print(f"formato = {formato!r} -> tipo: {type(formato).__name__}")
     print(f"grabando = {grabando} -> tipo: {type(grabando).__name__}")
-    return duracion, formato, frecuencia, grabando
+    return
 
 
 @app.cell
@@ -250,7 +251,7 @@ def _():
     print(f"Termina con .wav: {archivo.endswith('.wav')}")
     print(f"Reemplazar:   {archivo.replace('.wav', '.mp3')}")
     print(f"Longitud:     {len(archivo)} caracteres")
-    return archivo
+    return
 
 
 @app.cell

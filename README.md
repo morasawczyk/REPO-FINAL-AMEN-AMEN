@@ -142,10 +142,11 @@ Las consultas están centralizadas en [Slack](https://slack.com/intl/es-ar/). Ve
 
 - **Lic. [Miriam Sassano](https://www.linkedin.com/in/miryam-patricia-sassano-7878189)** — miryam.sassano@gmail.com
 - **Ing. Antonio Greco** — antogreco2015@gmail.com
-- **Ing. [Maximiliano Yommi](https://www.linkedin.com/in/myommi)** — myommi@untref.edu.ar
-- **Sr. [Gonzalo Rodriguez Jannots](https://www.linkedin.com/in/gonzalo-rodr%C3%ADguez-jannots-568077174)** — rodriguez45984@estudiantes.untref.edu.ar
+- **Ing. [Maximiliano Yommi](https://maxiyommi.github.io/portfolio_insight/)** — myommi@untref.edu.ar
 
 ## Licencia
 
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />Este documento se destribuye con una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia Atribución CompartirIgual 4.0 Internacional de Creative Commons</a>.
+[![Licencia Creative Commons](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
+
+Este documento se distribuye con una [licencia Atribución CompartirIgual 4.0 Internacional de Creative Commons](http://creativecommons.org/licenses/by-sa/4.0/).
 © 2026 (CC BY-SA 4.0).
