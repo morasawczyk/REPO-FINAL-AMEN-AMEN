@@ -38,8 +38,7 @@ env/
 *~
 
 # Jupyter Notebook
-.ipynb_checkpoints/
-*/.ipynb_checkpoints/
+.ipynb_checkpoints
 
 # pyenv
 .python-version
@@ -53,17 +52,15 @@ env/
 # mypy
 .mypy_cache/
 
-# Environment variables
-.env
-.env.local
-
 # OS
 .DS_Store
 Thumbs.db
 
-# Backup / draft
-backup/
+# Audio files (mediciones)
+*.wav
+*.flac
+*.ogg
+*.mp3
 
-# Archivos pendientes de la catedra
-clases/pendientes.md
-clases/audio_analisis(pendiente).ipynb
+# Datos de medicion
+data/

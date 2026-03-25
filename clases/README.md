@@ -1,9 +1,53 @@
-| Semana | Temario | Material | Ejercicios | Observaciones |
-|:-:|:-:|:-:|:-:|:-:|
-| 1 | Presentación de la asignatura e introducción al uso de Python | [Presentación](https://docs.google.com/presentation/d/1Q6RibADuKiZLchEnXTh0p7nNUOu5mlpmg2WvxtS_pt0/edit?usp=sharing) <br> [Python - Instalación y configuración](https://gist.github.com/maxiyommi/a21fa6af877d1e00f1498e60654e6c4a) <br> [100_conceptos_basicos.ipynb](clase_1/100_conceptos_basicos.ipynb) |  [101_ejercicios.ipynb](clase_1/101_ejercicios.ipynb) | - |
-| 2 | Sintaxis básica de Python | [200_sintaxis_basica.ipynb](clase_2/200_sintaxis_basica.ipynb) <br> [202_sintaxis_basica_continuacion.ipynb](clase_2/202_sintaxis_basica_continuacion.ipynb)|  [201_ejercicios.ipynb](clase_2/201_ejercicios.ipynb) <br> [203_ejercicios.ipynb](clase_2/203_ejercicios.ipynb) | [Solución de los ejercicios](clase_2) |
-| 3 | Estructuras de datos y estructuras de control | [300_estructuras.ipynb](clase_3/300_estructuras.ipynb) <br> [302_modulos_funciones.ipynb](clase_3/302_modulos_funciones.ipynb) <br> [Presentación TP (1er parte)](https://docs.google.com/presentation/d/1XJAI0wFRRS6IaVops3jCAcfdRxvMJyQs_mIetzehh1c/edit?usp=sharing)|  [301_ejercicios.ipynb](clase_3/301_ejercicios.ipynb) <br> [303_ejercicios.ipynb](clase_3/303_ejercicios.ipynb) | [Solución de los ejercicios](clase_3) |
-| 4 | Introducción a Python cientifico (ecosistema SciPy). Señales discretas. Arrays y matrices. Presentación del trabajo práctico  | [400_intro_python_cientifico.ipynb](clase_4/400_intro_python_cientifico.ipynb) <br> [402_señales_discretas.ipynb](clase_4/402_señales_discretas.ipynb) <br> [Presentación TP (2da parte)](https://docs.google.com/presentation/d/1XJAI0wFRRS6IaVops3jCAcfdRxvMJyQs_mIetzehh1c/edit?usp=sharing) |  [401_ejercicios.ipynb](clase_4/401_ejercicios.ipynb) <br> [403_ejercicios.ipynb](clases/clase_4/403_ejercicios.ipynb) | [Solución de los ejercicios](clase_4) |
-| 5 | Periodicidad. Transformación de la variable independiente. Operación entre señales.  | [500_trabajando_señales.ipynb](clase_5/500_trabajando_señales.ipynb) |  [501_ejercicios.ipynb](clase_5/501_ejercicios.ipynb) | - |
-| 6 | Nociones básicas de audio y su uso en Python | [600_audio.ipynb](clase_6/600_audio.ipynb) |  - | - |
-| 7 | Clasificación de sistemas | [700_sistemas.ipynb](clase_7/700_sistemas.ipynb) | [701_ejercicios.ipynb](clase_7/701_ejercicios.ipynb) | - |
+# Clases — Señales y Sistemas 2026
+
+| # | Fecha | Clase | Pilares | Material | Ejercicios |
+|---|-------|-------|---------|----------|------------|
+| 1 | 31 Mar | [El Punto de Partida](clase_01/) | P1, P3, P2 | [contenido.py](clase_01/contenido.py) | [ejercicios.py](clase_01/ejercicios.py) |
+| 2 | 7 Abr | [Hablar en Python](clase_02/) | P1, P2 | [contenido.py](clase_02/contenido.py) | [ejercicios.py](clase_02/ejercicios.py) |
+| 3 | 14 Abr | [Construir con Funciones](clase_03/) | P1, P3 | [contenido.py](clase_03/contenido.py) | [ejercicios.py](clase_03/ejercicios.py) |
+| 4 | 21 Abr | [El Universo NumPy y las Señales](clase_04/) | P1, P2 | [contenido.py](clase_04/contenido.py) | [ejercicios.py](clase_04/ejercicios.py) |
+| 5 | 28 Abr | [Operaciones con Señales](clase_05/) | P1, P3 | [contenido.py](clase_05/contenido.py) | [ejercicios.py](clase_05/ejercicios.py) |
+| 6 | 5 May | [Audio en Python + Generación](clase_06/) | P1, P3 | [contenido.py](clase_06/contenido.py) | [ejercicios.py](clase_06/ejercicios.py) |
+| 7 | 12 May | [Sistemas y Clasificación](clase_07/) | P1, P2 | [contenido.py](clase_07/contenido.py) | [ejercicios.py](clase_07/ejercicios.py) |
+| 8 | 19 May | [Convolución + Entrega 1](clase_08/) | P1, P3 | [contenido.py](clase_08/contenido.py) | [ejercicios.py](clase_08/ejercicios.py) |
+| 9 | 26 May | [Frecuencia y Filtros](clase_09/) | P1, P2 | [contenido.py](clase_09/contenido.py) | [ejercicios.py](clase_09/ejercicios.py) |
+| 10 | 2 Jun | [Procesamiento de la RI](clase_10/) | P3, P1, P2 | [contenido.py](clase_10/contenido.py) | [ejercicios.py](clase_10/ejercicios.py) |
+| 11 | 9 Jun | [Vibecoding en Profundidad](clase_11/) | P2, P3 | [contenido.py](clase_11/contenido.py) | [ejercicios.py](clase_11/ejercicios.py) |
+| 12 | 16 Jun | [Entrega 2 + Documentación](clase_12/) | P3, P2 | [contenido.py](clase_12/contenido.py) | [ejercicios.py](clase_12/ejercicios.py) |
+| 13 | 23 Jun | [De Funciones a Producto](clase_13/) | P3, P2, P1 | [contenido.py](clase_13/contenido.py) | [ejercicios.py](clase_13/ejercicios.py) |
+| 14 | 30 Jun | [Pulido y Preparación](clase_14/) | P3, P2 | [contenido.py](clase_14/contenido.py) | [ejercicios.py](clase_14/ejercicios.py) |
+| 15 | 7 Jul | [Demo Day](clase_15/) | P3 | [contenido.py](clase_15/contenido.py) | — |
+
+## Pilares
+
+- **P1**: Lógica y estructuras básicas de programación
+- **P2**: Vibecoding, Agents, Skills
+- **P3**: De idea a MVP
+
+## Formato
+
+Las clases usan [Marimo](https://marimo.io) — notebooks reactivos en archivos `.py`:
+
+```bash
+# Abrir en modo edición
+marimo edit clase_01/contenido.py
+
+# Ejecutar en modo lectura
+marimo run clase_01/contenido.py
+```
+
+Cada clase contiene:
+- `README.md` — Objetivos y resumen
+- `contenido.py` — Notebook principal (Marimo)
+- `ejercicios.py` — Ejercicios (Marimo)
+- `soluciones.py` — Soluciones (liberado post-clase)
+- `extra/` — Recursos adicionales
+
+## Milestones del TP
+
+| Milestone | Clase | Fecha |
+|-----------|-------|-------|
+| M0: Arquitectura | 5 | 28 Abr |
+| M1: Generación (Entrega 1) | 8 | 19 May |
+| M2: Procesamiento (Entrega 2) | 12 | 16 Jun |
+| M3: Producto Final (Entrega 3) | 15 | 7 Jul |
