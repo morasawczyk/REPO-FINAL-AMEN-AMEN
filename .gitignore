@@ -67,3 +67,6 @@ backup/
 # Archivos pendientes de la catedra
 clases/pendientes.md
 clases/audio_analisis(pendiente).ipynb
+
+# MkDocs
+site/

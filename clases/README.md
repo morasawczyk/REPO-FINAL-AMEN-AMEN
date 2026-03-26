@@ -2,21 +2,21 @@
 
 | # | Fecha | Clase | Pilares | Material | Ejercicios |
 |---|-------|-------|---------|----------|------------|
-| 1 | 31 Mar | [El Punto de Partida](clase_01/) | P1, P3, P2 | [contenido.py](clase_01/contenido.py) | [ejercicios.py](clase_01/ejercicios.py) |
-| 2 | 7 Abr | [Hablar en Python](clase_02/) | P1, P2 | [contenido.py](clase_02/contenido.py) | [ejercicios.py](clase_02/ejercicios.py) |
-| 3 | 14 Abr | [Construir con Funciones](clase_03/) | P1, P3 | [contenido.py](clase_03/contenido.py) | [ejercicios.py](clase_03/ejercicios.py) |
-| 4 | 21 Abr | [El Universo NumPy y las Señales](clase_04/) | P1, P2 | [contenido.py](clase_04/contenido.py) | [ejercicios.py](clase_04/ejercicios.py) |
-| 5 | 28 Abr | [Operaciones con Señales](clase_05/) | P1, P3 | [contenido.py](clase_05/contenido.py) | [ejercicios.py](clase_05/ejercicios.py) |
-| 6 | 5 May | [Audio en Python + Generación](clase_06/) | P1, P3 | [contenido.py](clase_06/contenido.py) | [ejercicios.py](clase_06/ejercicios.py) |
-| 7 | 12 May | [Sistemas y Clasificación](clase_07/) | P1, P2 | [contenido.py](clase_07/contenido.py) | [ejercicios.py](clase_07/ejercicios.py) |
-| 8 | 19 May | [Convolución + Entrega 1](clase_08/) | P1, P3 | [contenido.py](clase_08/contenido.py) | [ejercicios.py](clase_08/ejercicios.py) |
-| 9 | 26 May | [Frecuencia y Filtros](clase_09/) | P1, P2 | [contenido.py](clase_09/contenido.py) | [ejercicios.py](clase_09/ejercicios.py) |
-| 10 | 2 Jun | [Procesamiento de la RI](clase_10/) | P3, P1, P2 | [contenido.py](clase_10/contenido.py) | [ejercicios.py](clase_10/ejercicios.py) |
-| 11 | 9 Jun | [Vibecoding en Profundidad](clase_11/) | P2, P3 | [contenido.py](clase_11/contenido.py) | [ejercicios.py](clase_11/ejercicios.py) |
-| 12 | 16 Jun | [Entrega 2 + Documentación](clase_12/) | P3, P2 | [contenido.py](clase_12/contenido.py) | [ejercicios.py](clase_12/ejercicios.py) |
-| 13 | 23 Jun | [De Funciones a Producto](clase_13/) | P3, P2, P1 | [contenido.py](clase_13/contenido.py) | [ejercicios.py](clase_13/ejercicios.py) |
-| 14 | 30 Jun | [Pulido y Preparación](clase_14/) | P3, P2 | [contenido.py](clase_14/contenido.py) | [ejercicios.py](clase_14/ejercicios.py) |
-| 15 | 7 Jul | [Demo Day](clase_15/) | P3 | [contenido.py](clase_15/contenido.py) | — |
+| 1 | 31 Mar | [El Punto de Partida](https://github.com/maxiyommi/signal-systems/tree/master/clases/clase_01) | P1, P3, P2 | [contenido.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_01/contenido.py) | [ejercicios.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_01/ejercicios.py) |
+| 2 | 7 Abr | [Hablar en Python](https://github.com/maxiyommi/signal-systems/tree/master/clases/clase_02) | P1, P2 | [contenido.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_02/contenido.py) | [ejercicios.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_02/ejercicios.py) |
+| 3 | 14 Abr | [Construir con Funciones](https://github.com/maxiyommi/signal-systems/tree/master/clases/clase_03) | P1, P3 | [contenido.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_03/contenido.py) | [ejercicios.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_03/ejercicios.py) |
+| 4 | 21 Abr | [El Universo NumPy y las Señales](https://github.com/maxiyommi/signal-systems/tree/master/clases/clase_04) | P1, P2 | [contenido.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_04/contenido.py) | [ejercicios.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_04/ejercicios.py) |
+| 5 | 28 Abr | [Operaciones con Señales](https://github.com/maxiyommi/signal-systems/tree/master/clases/clase_05) | P1, P3 | [contenido.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_05/contenido.py) | [ejercicios.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_05/ejercicios.py) |
+| 6 | 5 May | [Audio en Python + Generación](https://github.com/maxiyommi/signal-systems/tree/master/clases/clase_06) | P1, P3 | [contenido.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_06/contenido.py) | [ejercicios.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_06/ejercicios.py) |
+| 7 | 12 May | [Sistemas y Clasificación](https://github.com/maxiyommi/signal-systems/tree/master/clases/clase_07) | P1, P2 | [contenido.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_07/contenido.py) | [ejercicios.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_07/ejercicios.py) |
+| 8 | 19 May | [Convolución + Entrega 1](https://github.com/maxiyommi/signal-systems/tree/master/clases/clase_08) | P1, P3 | [contenido.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_08/contenido.py) | [ejercicios.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_08/ejercicios.py) |
+| 9 | 26 May | [Frecuencia y Filtros](https://github.com/maxiyommi/signal-systems/tree/master/clases/clase_09) | P1, P2 | [contenido.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_09/contenido.py) | [ejercicios.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_09/ejercicios.py) |
+| 10 | 2 Jun | [Procesamiento de la RI](https://github.com/maxiyommi/signal-systems/tree/master/clases/clase_10) | P3, P1, P2 | [contenido.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_10/contenido.py) | [ejercicios.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_10/ejercicios.py) |
+| 11 | 9 Jun | [Vibecoding en Profundidad](https://github.com/maxiyommi/signal-systems/tree/master/clases/clase_11) | P2, P3 | [contenido.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_11/contenido.py) | [ejercicios.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_11/ejercicios.py) |
+| 12 | 16 Jun | [Entrega 2 + Documentación](https://github.com/maxiyommi/signal-systems/tree/master/clases/clase_12) | P3, P2 | [contenido.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_12/contenido.py) | [ejercicios.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_12/ejercicios.py) |
+| 13 | 23 Jun | [De Funciones a Producto](https://github.com/maxiyommi/signal-systems/tree/master/clases/clase_13) | P3, P2, P1 | [contenido.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_13/contenido.py) | [ejercicios.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_13/ejercicios.py) |
+| 14 | 30 Jun | [Pulido y Preparación](https://github.com/maxiyommi/signal-systems/tree/master/clases/clase_14) | P3, P2 | [contenido.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_14/contenido.py) | [ejercicios.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_14/ejercicios.py) |
+| 15 | 7 Jul | [Demo Day](https://github.com/maxiyommi/signal-systems/tree/master/clases/clase_15) | P3 | [contenido.py](https://github.com/maxiyommi/signal-systems/blob/master/clases/clase_15/contenido.py) | — |
 
 ## Pilares
 
