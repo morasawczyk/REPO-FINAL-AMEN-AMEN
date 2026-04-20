@@ -5,6 +5,7 @@
 > **Sitio web del curso**: [maxiyommi.github.io/signal-systems](https://maxiyommi.github.io/signal-systems/)
 
 Repositorio con el contenido práctico de la asignatura Señales y Sistemas de la carrera [Ingeniería de Sonido](https://www.untref.edu.ar/carrera/ingenieria-de-sonido), en la [Universidad Nacional de Tres de Febrero](https://www.untref.edu.ar), Buenos Aires - Argentina.
+#33333333333
 
 ## Cursada 2026
 
