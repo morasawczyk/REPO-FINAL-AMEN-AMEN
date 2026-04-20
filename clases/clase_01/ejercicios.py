@@ -1,12 +1,13 @@
 import marimo
 
-__generated_with = "0.13.0"
+__generated_with = "0.23.1"
 app = marimo.App(width="medium")
-
+#aa
 
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 
@@ -40,6 +41,11 @@ def _():
     # sample_rate = ...
     # total_muestras = ...
     # print(...)
+
+    duracion1 = 3 #segundos
+    sample_rate1 = 48000 #Hz
+    total_muestras1 = duracion1 * sample_rate1
+    print(f"El número total de muestras para un audio de {duracion1} segundos, a una frecuencia de muestreo de {sample_rate1} Hz, es de un total de {total_muestras1:,} muestras.")
     return
 
 
