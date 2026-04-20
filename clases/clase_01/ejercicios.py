@@ -2,7 +2,7 @@ import marimo
 
 __generated_with = "0.23.1"
 app = marimo.App(width="medium")
-#aa
+
 
 @app.cell
 def _():
@@ -71,7 +71,15 @@ def _(mo):
 @app.cell
 def _():
     # EJERCICIO 2: Tu codigo aca
-    return
+    canales2 = 2 #estereo
+    bit_depth2 = 16 #bits
+    sample_rate2 = 44100 #Hz
+    duracion2 = 5 #segundos
+
+    tamano_bytes = sample_rate2 * duracion2 * canales2 * (bit_depth2/8)
+    tamano_mb2 = tamano_bytes/(1024**2)
+    print(f"El tamaño en MB de un archivo WAV es de {tamano_mb2:.2f} MB.")
+    return (canales2,)
 
 
 @app.cell
@@ -91,6 +99,12 @@ def _(mo):
 def _():
     # EJERCICIO 3: Tu codigo aca
     # duracion_seg = 197
+
+    duracion_seg3 = 197
+    minutos3 = duracion_seg3//60
+    segundos3 = duracion_seg3%60
+    resultado3 = f"{minutos3}:{segundos3}"
+    print(f"El resultado de {duracion_seg3} segundos es {resultado3}.")
     return
 
 
@@ -113,6 +127,16 @@ def _(mo):
 def _():
     # EJERCICIO 4: Tu codigo aca
     # nombre = "mi_cancion_final_v2.wav"
+    nombre4 = "mi_cancion_final_v2.wav"
+
+    extension4 = nombre4.split(".")[-1] # separa en lista y elige el ultimo elemento
+    nombresinext4 = nombre4.split(".")[0] # separa en lista por . y elige el primer elemento.
+    print(f"Nombre del archivo: {nombre4} \nLa extensión es: {extension4} \nEl nombre sin extensión es: {nombresinext4}")
+
+    punto4= nombre4.rfind(".")
+    ext4 = nombre4[punto4+1:]
+    nomsinext4 = nombre4[:punto4]
+    print(f"\nNombre del archivo: {nombre4} \nLa extensión es: {ext4} \nEl nombre sin extensión es: {nomsinext4}")
     return
 
 
@@ -139,6 +163,27 @@ def _(mo):
 @app.cell
 def _():
     # EJERCICIO 5: Tu codigo aca
+
+    c = 60
+    a4 = 69
+    c5 = 72
+
+    fc = 440*2**((c-69)/12)
+    fa4 = 440*2**((a4-69)/12)
+    fc5 = 440*2**((c5-69)/12)
+
+    print(f"Midi de C = {c}, en frecuencia = {fc:.2f}Hz. \nMidi de A4 = {a4}, en frecuencia = {fa4:.2f}Hz. \nMidi de C5 = {c5}, en frecuencia = {fc5:.2f}Hz.")
+
+    # otra opción sino es:
+
+    #Hago 2 listas:
+    midis = [60, 69, 72] # una con las frecuencias del midi
+    nommidi = ["C (Do central)","A4 (La 440)","C5 (Do una octava arriba)"] # otra con el nombre de las notas
+
+    #inicio un ciclo for:
+    for i,n in zip(midis,nommidi):
+        frecuencia5 = 440*2**((i-69)/12)
+        print(f"Para la nota: {n} que corresponde al midi número: {i}, la frecuencia que sonará es de: {frecuencia5:.2f} Hz. ")
     return
 
 
@@ -170,6 +215,22 @@ def _(mo):
 @app.cell
 def _():
     # EJERCICIO 6: Tu codigo aca
+
+    tit6 = "Bohemian Rhapsody"
+    art6 = "Queen"
+    duraseg6 = 354
+    sampler6 = 44100
+    bitd6 = 24
+
+    minu6 = duraseg6//60
+    seg6 = duraseg6%60
+    totmuestras6 = duraseg6*sampler6
+    duracion6 = f"{minu6}:{seg6}"
+
+    print(f"""Pista: {tit6} - {art6}
+    Duración: {duraseg6} 
+    Formato: {sampler6} Hz / {bitd6} 
+    Total muestras: {totmuestras6:,}""")
     return
 
 
@@ -196,8 +257,19 @@ def _(mo):
 
 
 @app.cell
-def _():
+def _(canales2):
     # EJERCICIO 7: Tu codigo aca
+
+    sr7 = 48000
+    bit7 = 24
+    canales7 = 2
+
+    es_profesional = sr7>=44100 and bit7>=16
+    es_hd= sr7>=96000 or bit7>=24
+    es_surround = canales2 >2
+    calidad_ok = es_profesional ==1 and   es_surround ==0
+    print(f"SR: {sr7} BITS: {bit7} CANALES: {canales7}")
+    print(f"\nEsprofesional?: {es_profesional} \nEs HD?: {es_hd} \nEs surround?: {es_surround} \nTiene buena calidad?: {calidad_ok}")
     return
 
 
@@ -225,6 +297,11 @@ def _(mo):
 @app.cell
 def _():
     # EJERCICIO 8: Tu codigo aca
+
+    samples8 = [22050 , 44100 , 48000 , 96000 , 192000]
+    for sample in samples8:
+        f_nyquist = sample/2
+        print ( f"Para el sample rate de : {sample} Hz, la frecuencia de Nyquist es de: {f_nyquist} Hz.")
     return
 
 
@@ -253,6 +330,13 @@ def _(mo):
 @app.cell
 def _():
     # EJERCICIO BONUS: Tu codigo aca
+
+    buffer = [64, 128, 256, 512]
+    samplebonus = [44100, 44100, 48000, 96000]
+
+    for b, s in zip(buffer,samplebonus):
+        latencia = b*1000/s
+        print(f"Buffer: {b} @ {s} Hz -> Latencia: {latencia:>4.2f} ms.")
     return
 
 
