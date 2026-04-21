@@ -229,9 +229,9 @@ def _():
     # 2 y 3. Calcular mono e imprimir
     print("Muestra  |    L    |    R    |  Mono")
     print("---------|---------|---------|--------")
-    for i, (l, r) in enumerate(stereo_pairs):
+    for p, (l, r) in enumerate(stereo_pairs):
         mono = (l + r) / 2
-        print(f"   {i:2d}    | {l:+5.2f}  | {r:+5.2f}  | {mono:+5.2f}")
+        print(f"   {p:2d}    | {l:+5.2f}  | {r:+5.2f}  | {mono:+5.2f}")
     return
 
 
@@ -295,8 +295,8 @@ def _():
 
     print("Nota -> Frecuencia")
     print("-" * 25)
-    for nota, freq in nota_freq_10.items():
-        print(f"  {nota:3s}: {freq:>8.2f} Hz")
+    for nota, frequnn in nota_freq_10.items():
+        print(f"  {nota:3s}: {frequnn:>8.2f} Hz")
     return
 
 
