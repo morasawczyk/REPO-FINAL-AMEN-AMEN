@@ -229,6 +229,21 @@ def _(mo):
 @app.cell
 def _():
     # EJERCICIO 6: Tu codigo aca
+    ff6 = [100,200,400]
+    na6 = [1,2,3,4,5]
+
+    header = "     |"
+    for h in na6:
+        header += f"    x{h:d}"
+    print(header)
+    print("-"*5 + "|" + "-"*(6*len(na6)))
+
+    for fund in ff6:
+        fila = f" {fund:>3d} |"
+        for h in na6:
+            fila += f" {fund*h:>5d}"
+        print(fila)
+
     return
 
 
@@ -258,6 +273,11 @@ def _(mo):
 @app.cell
 def _():
     # EJERCICIO 7: Tu codigo aca
+    album7 = ["Speak to Me", "Breathe", "On the Run", "Time", "The Great Gig in the Sky", "Money", "Us and Them", "Any Colour You Like", "Brain Damage", "Eclipse"]
+
+    for num,cancion in enumerate(album7, start=1):
+        print(f"{num:02d}. {cancion}")
+
     return
 
 
@@ -284,6 +304,18 @@ def _(mo):
 @app.cell
 def _():
     # EJERCICIO 8: Tu codigo aca
+
+    iz8 = [0.5, -0.3, 0.8, -0.6, 0.2, -0.9, 0.4]
+    de8 = [0.3, -0.1, 0.6, -0.4, 0.1, -0.7, 0.3]
+
+    sp8 = list(zip(iz8,de8))
+
+    print("Muestra  |    L    |    R    |  Mono")
+    print("---------|---------|---------|--------")
+
+    for num8 , (lef8,right8) in enumerate(sp8):
+        mono8 = (lef8 + right8)/2
+        print(f"    {num8:02d}   |  {lef8:+5.2f}  |  {right8:+5.2f}  |  {mono8:+5.2f}")
     return
 
 
@@ -311,6 +343,23 @@ def _(mo):
 @app.cell
 def _():
     # EJERCICIO 9: Tu codigo aca
+
+    intea9 = {44100, 48000, 88200, 96000, 176400, 192000}
+    inteb9 = {44100, 48000, 96000}
+
+    print(f"Los sample rates soportador por ambos son: {intea9 & inteb9}")
+
+    print(f"Los sample rates soportador por al menos una interfaz son: {intea9 | inteb9}")
+
+    print(f"Los sample rates soportador por A pero no por B son: {intea9 - inteb9}")
+
+    subconjunto9 = inteb9.issubset(intea9)
+    print(f"¿B es subconjunto de A?: {subconjunto9}")
+
+
+
+
+
     return
 
 
@@ -338,6 +387,20 @@ def _(mo):
 @app.cell
 def _():
     # EJERCICIO 10: Tu codigo aca
+
+    nom10 = ["A3","B3","C4","D4","E4","F4","G4","A4","B4","C5","D5","E5","F5","G5","A5"]
+    midibase10 = [57,59,60,62,64,65,67,69,71,72,74,76,77,79,81]
+
+    dic10 = {
+        nomb10: 440.0*2**((mmi10-69)/12)
+        for nomb10,mmi10 in zip(nom10,midibase10)
+    }
+
+    print("Nota -> Frecuencia")
+    print("-" * 25)
+
+    for notita, midito in dic10.items():
+        print(f"  {notita:3s}: {midito:>8.2f} Hz")
     return
 
 
