@@ -1,12 +1,13 @@
 import marimo
 
-__generated_with = "0.13.0"
+__generated_with = "0.23.1"
 app = marimo.App(width="medium")
 
 
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 
@@ -46,6 +47,20 @@ def _(mo):
 def _():
     # EJERCICIO 1: Tu codigo aca
     # freq = 880
+    frecu1 = [880,35]
+    categoria1 = ()
+    for f in frecu1:
+        if 20000>= f >=12000:
+             categoria1 = "Ultra-treble"
+        elif f>= 4000:
+             categoria1 = "Treble"
+        elif f>= 250:
+             categoria1 = "Mid"
+        elif f>= 60:
+             categoria1 = "Bass"
+        else:
+             categoria1 = "Sub bass"
+        print(f"La frecuencia: {f} Hz es categorizada como: {categoria1}.")
     return
 
 
@@ -67,6 +82,10 @@ def _(mo):
 @app.cell
 def _():
     # EJERCICIO 2: Tu codigo aca
+    fundamental2 = 220
+    print(f"La fundamental es: {fundamental2} Hz.")
+    for n in range(1,11):
+        print(f"  Armónico {n:2d}: {n*fundamental2:>5} Hz")
     return
 
 
@@ -92,7 +111,19 @@ def _():
     # EJERCICIO 3: Tu codigo aca
     # import math
     # amplitudes = [1.0, 0.707, 0.5, 0.25, 0.1, 0.01]
-    return
+    import math
+    amplitudes3 = [1.0, 0.707, 0.5, 0.25, 0.1, 0.01]
+    amplitudesde3 = [20*math.log10(d) for d in amplitudes3]
+    print(f"Lineal   ->   Db")
+    print("-"*22)
+    for l,m in zip(amplitudes3,amplitudesde3):
+        print(f"{l:6.3f}   -> {m:7.2f} Db")
+
+
+
+
+
+    return (math,)
 
 
 @app.cell
@@ -111,8 +142,16 @@ def _(mo):
 
 
 @app.cell
-def _():
+def _(math):
     # EJERCICIO 4: Tu codigo aca
+    freccen4 = [125, 250, 500, 1000, 2000, 4000, 8000]
+    raiz2 = math.sqrt(2)
+    bandabw = {fc: fc * (raiz2 - 1/raiz2) for fc in freccen4}
+
+    for fr,b in bandabw.items():
+        print(f"{fr:>6} Hz: BW = {b:.1f} Hz")
+
+
     return
 
 
@@ -143,6 +182,24 @@ def _(mo):
 @app.cell
 def _():
     # EJERCICIO 5: Tu codigo aca
+
+    archivos5 = [
+        {"nombre": "voz.wav", "sr": 44100, "bits": 16, "duracion": 30.0},
+        {"nombre": "guitarra.wav", "sr": 22050, "bits": 16, "duracion": 120.0},
+        {"nombre": "master.wav", "sr": 96000, "bits": 32, "duracion": 240.0},
+        {"nombre": "borrador.wav", "sr": 8000, "bits": 8, "duracion": 5.0},
+        {"nombre": "drums.wav", "sr": 48000, "bits": 24, "duracion": 60.0},
+    ]
+    sralta = [a for a in archivos5 if a["sr"]>= 44100]
+    print(f"Los archivos que pasan el filtro son:")
+    print(f"{sralta}")
+    print(f"\nDetalle:")
+    for v in sralta:
+        print(f"{v['nombre']:>15}: {v['sr']:>6} Hz, {v['bits']} bits, {v['duracion']:.0f} s")
+
+
+
+
     return
 
 

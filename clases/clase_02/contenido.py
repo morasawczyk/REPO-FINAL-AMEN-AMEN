@@ -1,12 +1,13 @@
 import marimo
 
-__generated_with = "0.13.0"
+__generated_with = "0.23.1"
 app = marimo.App(width="medium")
 
 
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 
@@ -69,7 +70,7 @@ def _():
         estado = "Nivel bajo"
 
     print(f"Nivel: {nivel_db} dB -> {estado}")
-    return
+    return (nivel_db,)
 
 
 @app.cell
@@ -105,7 +106,7 @@ def _():
             print(f"  {banda / 1000:.0f} kHz")
         else:
             print(f"  {banda} Hz")
-    return (bandas_octava,)
+    return
 
 
 @app.cell
@@ -126,7 +127,7 @@ def _():
     print("Listado de pistas:")
     for i, pista in enumerate(pistas, start=1):
         print(f"  Track {i:02d}: {pista}")
-    return (pistas,)
+    return
 
 
 @app.cell
@@ -136,8 +137,8 @@ def _():
     canales_der = [0.4, -0.2, 0.7, -0.3, 0.5]
 
     print("Muestras estereo (L, R):")
-    for i, (izq, der) in enumerate(zip(canales_izq, canales_der)):
-        print(f"  Muestra {i}: ({izq:+.1f}, {der:+.1f})")
+    for s, (izq, der) in enumerate(zip(canales_izq, canales_der)):
+        print(f"  Muestra {s}: ({izq:+.1f}, {der:+.1f})")
     return
 
 
@@ -152,18 +153,18 @@ def _(mo):
 
 
 @app.cell
-def _():
+def _(nivel_db):
     # Simular un decay: la senal se reduce hasta estar por debajo del umbral
-    nivel = 1.0          # nivel inicial (lineal)
+    nibel = 1.0          # nivel inicial (lineal)
     decay_factor = 0.7   # factor de decaimiento por paso
     umbral = 0.01        # umbral minimo
     paso = 0
 
     print("Simulacion de decay:")
-    while nivel > umbral:
-        nivel_db = 20 * __import__('math').log10(nivel) if nivel > 0 else float('-inf')
-        print(f"  Paso {paso:2d}: nivel = {nivel:.4f} ({nivel_db:.1f} dB)")
-        nivel *= decay_factor
+    while nibel > umbral:
+        nivel_dbb = 20 * __import__('math').log10(nibel) if nibel > 0 else float('-inf')
+        print(f"  Paso {paso:2d}: nivel = {nibel:.4f} ({nivel_db:.1f} dB)")
+        nibel *= decay_factor
         paso += 1
 
     print(f"  -> Senal debajo del umbral despues de {paso} pasos")
@@ -194,16 +195,16 @@ def _():
 
 
 @app.cell
-def _(math):
+def _():
     # Filtrar: solo frecuencias por encima de 1000 Hz
     todas_las_freq = [100, 250, 500, 800, 1000, 2000, 4000, 8000, 16000]
     agudos = [f for f in todas_las_freq if f > 1000]
-    graves = [f for f in todas_las_freq if f <= 500]
+    graves = [ f for f in todas_las_freq if f <= 500]
 
     print(f"Todas: {todas_las_freq}")
     print(f"Agudos (>1kHz): {agudos}")
     print(f"Graves (<=500): {graves}")
-    return (todas_las_freq,)
+    return
 
 
 @app.cell
@@ -319,8 +320,8 @@ def _():
     print(f"Sample rate: {formato_audio[0]}")
 
     # Unpacking
-    sr, bits, ch = formato_audio
-    print(f"SR={sr}, Bits={bits}, Canales={ch}")
+    ss, bits, ch = formato_audio
+    print(f"SR={ss}, Bits={bits}, Canales={ch}")
 
     # Las tuplas son inmutables - esto daria error:
     # formato_audio[0] = 48000  # TypeError!
@@ -332,9 +333,9 @@ def _():
         (96000, 32, 6),
     ]
 
-    for sr, bits, ch in formatos:
+    for ss, bits, ch in formatos:
         tipo = "estereo" if ch == 2 else f"{ch} canales"
-        print(f"  {sr} Hz / {bits} bits / {tipo}")
+        print(f"  {ss} Hz / {bits} bits / {tipo}")
     return
 
 
@@ -364,9 +365,9 @@ def _():
 
     # Iterar sobre un diccionario
     print("\nEscala de Do mayor:")
-    for nota, freq in nota_freq.items():
-        print(f"  {nota}: {freq:>7.2f} Hz")
-    return (nota_freq,)
+    for nota, frequ in nota_freq.items():
+        print(f"  {nota}: {frequ:>7.2f} Hz")
+    return
 
 
 @app.cell
@@ -433,7 +434,8 @@ def _(mo):
 
 @app.cell
 def _():
-    # Lista de diccionarios: pistas de una sesion
+    ### Lista de diccionarios: pistas de una sesion
+
     sesion = [
         {"nombre": "Vocals", "nivel_db": -6.2, "pan": 0, "mute": False, "sr": 48000},
         {"nombre": "Guitar L", "nivel_db": -8.5, "pan": -50, "mute": False, "sr": 48000},
@@ -447,8 +449,8 @@ def _():
     print(f"{'Track':<12} {'Nivel':>7} {'Pan':>5} {'Mute':>5}")
     print("-" * 32)
     for track in sesion:
-        estado = "MUTE" if track["mute"] else "  ON"
-        print(f"{track['nombre']:<12} {track['nivel_db']:>6.1f}dB {track['pan']:>+4d} {estado:>5}")
+        suena = "MUTE" if track["mute"] else "  ON"
+        print(f"{track['nombre']:<12} {track['nivel_db']:>6.1f}dB {track['pan']:>+4d} {suena:>5}")
 
     # Filtrar tracks activos
     activos = [t["nombre"] for t in sesion if not t["mute"]]
@@ -458,7 +460,7 @@ def _():
     niveles_activos = [t["nivel_db"] for t in sesion if not t["mute"]]
     promedio = sum(niveles_activos) / len(niveles_activos)
     print(f"Nivel promedio (activos): {promedio:.1f} dB")
-    return (sesion,)
+    return
 
 
 @app.cell

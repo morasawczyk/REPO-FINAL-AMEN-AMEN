@@ -17,3 +17,4 @@
 ## Tarea
 - Configurar entorno (Python 3.12+, uv, VS Code)
 - Crear repo GitHub personal, push README.md
+#######
