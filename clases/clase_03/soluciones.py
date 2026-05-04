@@ -1,18 +1,20 @@
 import marimo
 
-__generated_with = "0.13.0"
+__generated_with = "0.23.3"
 app = marimo.App(width="medium")
 
 
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 
 @app.cell
 def _():
     import math
+
     return (math,)
 
 
@@ -100,7 +102,7 @@ def _(math):
     # Pruebas
     for freq in [440.0, 261.63, 880.0, 130.81]:
         print(f"{freq:>8.2f} Hz -> MIDI {hz_a_midi(freq)}")
-    return (hz_a_midi,)
+    return
 
 
 @app.cell
@@ -119,7 +121,7 @@ def _():
         tipo: str = "in",
         duracion_ms: float = 100,
         fs: int = 44100,
-    ) -> list[float]:
+        ) -> list[float]:
         """Aplica un fade lineal (in o out) a una senal.
 
         Parameters
@@ -175,7 +177,7 @@ def _():
     fade_in_corto = aplicar_fade(senal_corta, tipo="in", duracion_ms=90.7, fs=44.1)
     # ~4 muestras de fade a ese sr y duracion
     print(f"\nFade in (8 muestras): {[f'{s:.3f}' for s in fade_in_corto]}")
-    return (aplicar_fade,)
+    return
 
 
 @app.cell
@@ -243,7 +245,7 @@ def _():
     print(f"Senal B:          {b}")
     print(f"Mezcla uniforme:  {mezcla_uniforme}")
     print(f"Mezcla 80/20:     {mezcla_pesos}")
-    return (mezclar_senales,)
+    return
 
 
 @app.cell
@@ -289,7 +291,7 @@ def _():
 
     info2 = info_audio("test.wav")
     print(info2)
-    return (info_audio,)
+    return
 
 
 @app.cell

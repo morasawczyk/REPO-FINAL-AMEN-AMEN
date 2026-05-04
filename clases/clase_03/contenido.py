@@ -1,12 +1,13 @@
 import marimo
 
-__generated_with = "0.13.0"
+__generated_with = "0.23.3"
 app = marimo.App(width="medium")
 
 
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 
@@ -41,6 +42,7 @@ def _(mo):
 @app.cell
 def _():
     import math
+
     return (math,)
 
 
@@ -510,7 +512,7 @@ def _(math):
     print(f"  hz_a_midi(261.6) = {hz_a_midi(261.6)}")
     print(f"  amplitud_a_db(1.0) = {amplitud_a_db(1.0):.1f} dB")
     print(f"  amplitud_a_db(0.5) = {amplitud_a_db(0.5):.1f} dB")
-    return amplitud_a_db, hz_a_midi, midi_a_hz
+    return hz_a_midi, midi_a_hz
 
 
 @app.cell
@@ -540,9 +542,9 @@ def _(midi_a_hz):
     assert midi_a_hz(57) == 220.0, "A3 debe ser 220 Hz"
 
     # Para floats, usamos una tolerancia
-    resultado = midi_a_hz(60)
+    resulto = midi_a_hz(60)
     esperado = 261.6255653005986
-    assert abs(resultado - esperado) < 0.001, f"C4 debe ser ~261.63, got {resultado}"
+    assert abs(resulto - esperado) < 0.001, f"C4 debe ser ~261.63, got {resulto}"
 
     print("Todos los asserts pasaron correctamente!")
     return
@@ -623,7 +625,7 @@ def _(calcular_rms, hz_a_midi, math, midi_a_hz):
     tests_fallados = 0
 
     def run_test(nombre, condicion):
-        nonlocal tests_pasados, tests_fallados
+        global tests_pasados, tests_fallados
         if condicion:
             print(f"  PASS: {nombre}")
             tests_pasados += 1

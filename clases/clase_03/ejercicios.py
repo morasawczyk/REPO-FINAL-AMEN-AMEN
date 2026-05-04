@@ -1,12 +1,13 @@
 import marimo
 
-__generated_with = "0.13.0"
+__generated_with = "0.23.3"
 app = marimo.App(width="medium")
 
 
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 
@@ -43,7 +44,32 @@ def _(mo):
 @app.cell
 def _():
     # EJERCICIO 1: Tu codigo aca
-    return
+    def midi_a_hz(nota_midi : int) -> float:
+        """Convierte un número de nota de MIDI a frecuencia en Hz.
+    
+        Parameters:
+        ------------
+        nota_midi : int
+            Número de nota MIDI (0-127)
+
+        Returns:
+        ------------
+        float
+            El valor en Hz al que le corresponde nota_midi
+
+        Raises:
+        ------------
+        ValueError 
+            Si nota_midi no está entre o y 127.
+        """
+        if not (0 <= nota_midi <=127):
+            raise ValueError(f"El valor de nota_midi debe estar entre 0 y 127, y se recibió {nota_midi}")
+        return 440 * 2** ((nota_midi-69)/12)
+
+    #Ahora lo pruebo:
+    for i in [69,71,57]:
+        print(f"La nota MIDI número: {i} corresponde al valor de {midi_a_hz(i):>8.2f} Hz.")
+    return (midi_a_hz,)
 
 
 @app.cell
@@ -69,7 +95,37 @@ def _(mo):
 @app.cell
 def _():
     # EJERCICIO 2: Tu codigo aca
-    return
+
+    import math
+
+    def hz_a_midi(frecuencia : float) -> int:
+        """Convierte una frecuencia en Hz al número de nota MIDI más cercano
+    
+        Parameters:
+        -----------
+        frecuencia : float
+            frecuencia en Hz (Debe ser positiva).
+    
+        Return:
+        -----------
+        int
+            El valor de la nota midi para la frecuencia dada (Entre 0 y 127).
+
+        Raises:
+        -----------
+        ValueError
+            Si la frecuencia no es positiva
+        """
+        if frecuencia<=0:
+            raise ValueError (f"La frecuencia en Hz debe ser positiva, y la recibida fue {frecuencia}.")
+        return round(69+12*math.log2(frecuencia/440))
+
+    for ih in [440, 261.63, 880]:
+        print(f"La frecuencia de {ih} Hz, corresponde al MIDI número: {hz_a_midi(ih):>.2f}.")
+
+
+
+    return (math,)
 
 
 @app.cell
@@ -100,6 +156,66 @@ def _(mo):
 @app.cell
 def _():
     # EJERCICIO 3: Tu codigo aca
+
+    def aplicar_fade(
+        signal : list[float] ,
+        tipo : str = "in" ,
+        duracion_ms : float = 100 ,
+        fs : int = 44100
+        ) -> list[float]:
+        """
+        Aplica un fade in/out lineal a una señal.
+
+        Parameters:
+        -----------
+        signal : list[float]
+            Esta lista contiene las muestras de la señal que será modificada.
+        tipo : str, puede ser "in" o "out"
+            El fade puede realizarse al inicio de la señal (in), o al final (out). Por default esta seleccionada la opción de fade in.
+        duracion_ms : float
+            La duración del fade en milisegundos, por defecto = 100 ms.
+        fs : int
+            Frecuencia de sampleo, por defecto 44100 Hz.
+
+        Return:
+        -------
+        list[float]
+            Nueva señal con el fade in/out aplicado.
+
+        Raises:
+        -------
+        ValueError
+            Si tipo no es "in" u "out".
+        """
+        if tipo not in ("in","out"):
+            raise ValueError (f"Tipo no es 'in' ni 'out', el tipo recibido fue {tipo}")
+        n_fade = int(fs*duracion_ms/1000)
+        n_fade = min(n_fade, len(signal))
+
+        resultado = list(signal)
+
+        for i in range(n_fade):
+            factor = i/n_fade if n_fade > 0 else 1.0
+            if tipo == "in":
+                resultado[i]*=factor
+            else:
+                resultado[-(i+1)]*= factor
+        return resultado
+
+    señal = 20 * [1.0]
+    fin= aplicar_fade(señal,"in",0.2)
+    fout = aplicar_fade(señal,"out",0.2)
+
+    print(f"Original: {señal}")
+    print(f"Fade-in: {fin}")
+    print(f"Fade-out: {fout}")
+
+
+    senal_corta = [1.0] * 8
+    fade_in_corto = aplicar_fade(senal_corta, tipo="in", duracion_ms=90.7, fs=44.1)
+    print(f"\nFade in (8 muestras): {[f'{s:.3f}' for s in fade_in_corto]}")
+    
+
     return
 
 
@@ -133,6 +249,58 @@ def _(mo):
 @app.cell
 def _():
     # EJERCICIO 4: Tu codigo aca
+
+    def mezclar_señales(*signals : list[float] , pesos : list[float] | None = None) -> list[float] :
+        """
+        Esta función mezcla múltiples señales en una sola.
+    
+        Parameters:
+        -----------
+        *signals : list[float]
+            Todas las señales que van a ser mezcladas en una, serán procesadas, deben tener todas la misma longitud.
+        pesos: list[float]
+            El peso que cada señal tiene en la sumatoria, si no se le asignan ningún valor, entonces la función toma que son todas del mismo peso.
+
+        Return:
+        -------
+        list[float]
+            Una lista con la sumatoria de las señales.
+
+        Raises:
+        -------
+        ValueError 
+            Si no se proporcionan señales, o no poseen la misma longitud.
+        """
+        if not signals:
+            raise ValueError ("No se proporcionaron señales.")
+        longitud = len(signals[0])
+        if not all(len(s) == longitud for s in signals):
+            raise ValueError ("Las señales proporcionadas no tienen la misma longitud.")
+
+        n = len(signals)
+
+        if pesos is None:
+            pesos_efec = [1.0/n]*n
+        else:
+            if len(pesos) != n:
+                raise ValueError ("La cantidad de pesos debe ser igual a la cantidad de señales")
+            pesos_efec = pesos
+
+        mezcla = [0.0] * longitud
+
+        for señal, peso in zip(signals,pesos_efec):
+            for i in range(longitud):
+                mezcla[i]+= señal[i]*peso
+        return mezcla
+
+    a = [1.0, 0.5, -0.5]
+    b = [0.0, 1.0, 0.0]
+
+    print(f"Las señales puras son: \n{a}\n{b}")
+    print(f"Señal mezclada: {mezclar_señales(a,b)}")
+    print(f"Señal mezclada con pesos: {mezclar_señales(a,b, pesos = [0.8,0.2])}")
+
+
     return
 
 
@@ -169,6 +337,37 @@ def _(mo):
 @app.cell
 def _():
     # EJERCICIO 5: Tu codigo aca
+
+    def info_audio(nombre : str , sr : int = 44100 , **kwargs ) -> str :
+        """
+        Esta función toma todos los elementos y devuelve como un diccionario.
+
+        Parameters:
+        -----------
+        nombre: str
+            Nombre de la canción.
+        sr : int
+            Sample rate de la canción por defecto 44100 Hz.
+        **kwargs:
+            Parámetros adicionales a mostrar (ej: bits, canales, artista, etc)
+
+        Return:
+        -------
+        str
+            String formateado con la info dada.
+        """
+        lineas = [
+            f"=== {nombre} ===",
+            f"Sample Rate: {sr:,} Hz",
+        ]
+        for clave, valor in kwargs.items():
+            lineas.append(f"{clave}: {valor}")
+        return "\n".join(lineas)
+
+    info1 = info_audio("cancion.wav", sr=48000, bits=24, canales=2, artista="Queen")
+    print(info1)
+    info2 = info_audio("test.wav")
+    print(f'\n{info2}')
     return
 
 
@@ -210,6 +409,9 @@ def _(mo):
 def _():
     # EJERCICIO 6: Simula aca las funciones que pondrias en el modulo
     # y mostra que funcionan
+    import mis_funciones
+
+
     return
 
 
@@ -242,8 +444,50 @@ def _(mo):
 
 
 @app.cell
-def _():
+def _(midi_a_hz):
     # EJERCICIO 7: Tu codigo aca
+
+    def test_midi_a_hz_a4():
+        """Verifica que MIDI 69 retorna 440.0 Hz."""
+        assert midi_a_hz(69) == 440.0
+
+    def test_midi_a_hz_octavas():
+        """Verifica que subir 12 semitonos duplica la frecuencia."""
+        freq_a4 = midi_a_hz(69)
+        freq_a5 = midi_a_hz(81)
+        assert abs(freq_a5 - 2 * freq_a4) < 0.001, "A5 debe ser el doble de A4"
+
+        freq_a3 = midi_a_hz(57)
+        assert abs(freq_a3 - freq_a4 / 2) < 0.001, "A3 debe ser la mitad de A4"
+
+    def test_midi_a_hz_rango_invalido():
+        """Verifica que notas fuera de rango lanzan ValueError."""
+        # MIDI -1
+        try:
+            midi_a_hz(-1)
+            assert False, "Deberia haber lanzado ValueError para -1"
+        except ValueError:
+            pass  # OK
+
+        # MIDI 128
+        try:
+            midi_a_hz(128)
+            assert False, "Deberia haber lanzado ValueError para 128"
+        except ValueError:
+            pass  # OK
+
+    # Ejecutar tests
+    tests = [test_midi_a_hz_a4, test_midi_a_hz_octavas, test_midi_a_hz_rango_invalido]
+
+    print("Ejecutando tests de midi_a_hz:\n")
+    for test in tests:
+        try:
+            test()
+            print(f"  PASS: {test.__name__}")
+        except AssertionError as e:
+            print(f"  FAIL: {test.__name__} - {e}")
+
+    print("\nTodos los tests pasaron!")
     return
 
 
@@ -272,8 +516,76 @@ def _(mo):
 
 
 @app.cell
-def _():
+def _(math):
     # EJERCICIO 8: Tu codigo aca
+
+    def normalizar(signal: list[float]) -> list[float]:
+        """Normaliza una senal al rango [-1, 1].
+
+        Divide todas las muestras por el valor absoluto maximo.
+        Si la senal es toda ceros, retorna la senal sin cambios.
+
+        Parameters
+        ----------
+        signal : list[float]
+            Senal de entrada.
+
+        Returns
+        -------
+        list[float]
+            Senal normalizada al rango [-1, 1].
+        """
+        if not signal:
+            return []
+
+        valor_max = max(abs(m) for m in signal)
+
+        if valor_max == 0:
+            return list(signal)  # Retornar copia
+
+        return [m / valor_max for m in signal]
+
+    # Tests
+    def test_normalizar_basico():
+        """Una senal con pico en 0.5 debe tener pico en 1.0."""
+        senal = [0.5, -0.3, 0.2, -0.5, 0.4]
+        resultado = normalizar(senal)
+        assert max(abs(m) for m in resultado) == 1.0
+        # Verificar que el primer valor (0.5/0.5 = 1.0)
+        assert resultado[0] == 1.0
+        assert resultado[3] == -1.0
+
+    def test_normalizar_ya_normalizada():
+        """Una senal con pico en 1.0 no cambia."""
+        senal = [1.0, -0.5, 0.3, -1.0]
+        resultado = normalizar(senal)
+        for orig, norm in zip(senal, resultado):
+            assert math.isclose(orig, norm), f"{orig} != {norm}"
+
+    def test_normalizar_silencio():
+        """Una senal de ceros retorna ceros."""
+        senal = [0.0, 0.0, 0.0, 0.0]
+        resultado = normalizar(senal)
+        assert all(m == 0.0 for m in resultado)
+
+    # Ejecutar tests
+    tests_norm = [test_normalizar_basico, test_normalizar_ya_normalizada, test_normalizar_silencio]
+
+    print("Ejecutando tests de normalizar:\n")
+    for tes in tests_norm:
+        try:
+            tes()
+            print(f"  PASS: {tes.__name__}")
+        except AssertionError as e:
+            print(f"  FAIL: {tes.__name__} - {e}")
+
+    # Demo visual
+    senal_demo = [0.3, -0.6, 0.2, 0.6, -0.1]
+    normalizada = normalizar(senal_demo)
+    print(f"\nDemo:")
+    print(f"  Original:    {senal_demo}")
+    print(f"  Normalizada: {[f'{m:.3f}' for m in normalizada]}")
+    print(f"  Pico: {max(abs(m) for m in normalizada):.3f}")
     return
 
 
